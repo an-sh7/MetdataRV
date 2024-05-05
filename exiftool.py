@@ -1,39 +1,54 @@
 import os
 import subprocess
+import tkinter as tk
+from tkinter import filedialog
 
 # Get the directory path where the current Python script is located
 script_dir = os.path.dirname(os.path.realpath(__file__))
 
-# Set of allowed characters for input
-allowed_characters = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-./\\&: ")
-
 # Assign the path of exiftool.exe
 tool_path = os.path.join(script_dir, "exiftool.exe")
 
-#Get the file Location
-def get_file():
-    while True:
-        file_path = input("Enter the file path: ")
-        #input validation
-        if not set(file_path).issubset(allowed_characters):
-            print("Invalid characters in input.")
-            continue
-        else:
-            return file_path
+# Function to read metadata
+def read_metadata():
+    file_path = filedialog.askopenfilename(title="Select a file")
+    if file_path:
+        output_text.delete(1.0, tk.END)  # Clear the output text area
+        read_data = subprocess.run([tool_path, file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        output_text.insert(tk.END, read_data.stdout)
+        output_text.insert(tk.END, read_data.stderr)
 
-choice = int(input("Press 1 to read the metadata \nPress 2 to remove all metadata\n"))
-while(True):
-    if choice == 1:
-        #Reading the metadata
-        file_path = get_file()
-        read_data = subprocess.run([tool_path, file_path], stdout=subprocess.PIPE)
-        print(read_data.stdout.decode('utf-8'))
-        break
-    elif choice == 2:
-        #Deleting the metadata
-        file_path = get_file()
-        delete_data = subprocess.run([tool_path, "-all=", file_path])
-        print("Copy of the original is also created")
-        break
-    else:
-        print("Wrong value entered")
+# Function to remove all metadata
+def remove_all_metadata():
+    file_path = filedialog.askopenfilename(title="Select a file")
+    if file_path:
+        output_text.delete(1.0, tk.END)  # Clear the output text area
+        delete_data = subprocess.run([tool_path, "-all=", file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        output_text.insert(tk.END, delete_data.stdout)
+        output_text.insert(tk.END, delete_data.stderr)
+
+# GUI
+root = tk.Tk()
+root.title("Metadata Remover and Viewer")
+
+# Making it DarkMode
+bg_color = "#333333"  
+fg_color = "#FFFFFF"  
+button_bg_color = "#444444"  
+button_fg_color = "#FFFFFF"  
+
+root.configure(bg=bg_color)
+
+#Button to Read Data
+read_button = tk.Button(root, text="Read Metadata", command=read_metadata, bg=button_bg_color, fg=button_fg_color)
+read_button.pack(pady=5)
+
+#Button the Remove Data
+remove_button = tk.Button(root, text="Remove All Metadata", command=remove_all_metadata, bg=button_bg_color, fg=button_fg_color)
+remove_button.pack(pady=5)
+
+#Output Box
+output_text = tk.Text(root, height=20, width=100, bg=bg_color, fg=fg_color) 
+output_text.pack(pady=10)
+
+root.mainloop()
