@@ -24,3 +24,6 @@ The Simple Metadata Remover is a Python program designed to remove or view metad
 - **Customization**: You can customize the program further by modifying the Python script according to your requirements. For example, you can add additional options or functionality.
 
 - **Dependencies**: This program relies on the exiftool executable. Ensure that it is correctly installed and accessible from the same directory as the Python script.
+
+  ## License
+  [MIT License](LICENSE)
