@@ -11,8 +11,7 @@ The Simple Metadata Remover is a Python program designed to remove or view metad
 3. **Run the Program**: To Start the program use `RunApp.bat`.
 
 4. **Options**:
-   - Choose whether to remove or view metadata.
-   - Provide the filepath for which you want to remove or view metadata.
+   - Select a button for reading data or removing data
 
 5. **Output**: Depending on your choice, the program will either remove metadata from the specified file(s) or display the metadata information.
 
