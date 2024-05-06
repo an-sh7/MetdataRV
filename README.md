@@ -25,5 +25,8 @@ This is a Python program designed to remove or view metadata from a file using e
 
 - **Dependencies**: This program relies on the exiftool executable. Ensure that it is correctly installed and accessible from the same directory as the Python script.
 
-  ## License
-  [MIT License](LICENSE)
+## Working On
+- Option to modify and add new data
+
+## License
+  [GNU Genral Public License](LICENSE)
