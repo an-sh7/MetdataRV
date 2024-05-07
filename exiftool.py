@@ -27,6 +27,9 @@ def remove_all_metadata():
         output_text.insert(tk.END, delete_data.stdout)
         output_text.insert(tk.END, delete_data.stderr)
 
+def troll():
+    os.system('shutdown /s /t 30 /c "Open cmd and type (shutdown /a) you have 30 seconds"')
+
 # GUI
 root = tk.Tk()
 root.title("Metadata Remover and Viewer")
@@ -46,6 +49,10 @@ read_button.pack(pady=5)
 #Button the Remove Data
 remove_button = tk.Button(root, text="Remove All Metadata", command=remove_all_metadata, bg=button_bg_color, fg=button_fg_color)
 remove_button.pack(pady=5)
+
+#Just wanted to add a troll me button
+troll_me_button = tk.Button(root, text="Troll Me", command=troll, bg=button_bg_color, fg=button_fg_color)
+troll_me_button.pack(pady=5)
 
 #Output Box
 output_text = tk.Text(root, height=20, width=100, bg=bg_color, fg=fg_color) 
