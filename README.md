@@ -1,6 +1,6 @@
-# Simple Metadata Remover
+# MetaDataRV
 
-The Simple Metadata Remover is a Python program designed to remove or view metadata from a file using exiftool. This tool is useful for users who want to protect their privacy by removing sensitive information embedded in files such as photos, documents, or audio files.
+This is a Python program designed to remove or view metadata from a file using exiftool. This tool is useful for users who want to protect their privacy by removing sensitive information embedded in files such as photos, documents, or audio files.
 
 ## How to Use
 
@@ -24,3 +24,9 @@ The Simple Metadata Remover is a Python program designed to remove or view metad
 - **Customization**: You can customize the program further by modifying the Python script according to your requirements. For example, you can add additional options or functionality.
 
 - **Dependencies**: This program relies on the exiftool executable. Ensure that it is correctly installed and accessible from the same directory as the Python script.
+
+## Working On
+- Option to modify and add new data
+
+## License
+  [GNU Genral Public License](LICENSE)
