@@ -4,16 +4,18 @@ This is a Python program designed to remove or view metadata from a file using e
 
 ## How to Use
 
-1. **Download exiftool**: If you don't want to use the exiftool provided in repository, download exiftool from the [official website](https://exiftool.org/). Extract the ZIP file and rename the executable to `exiftool.exe`.
+1. **Download Python**: This app is created in python, So gotta have [Python](https://www.python.org/) installed.
+   
+2. **Download exiftool**: If you don't want to use the exiftool provided in repository, download exiftool from the [official website](https://exiftool.org/). Extract the ZIP file and rename the executable to `exiftool.exe`.
 
-2. **Setup**: Ensure that all files, including the Python script, the `exiftool.exe` are placed in the same folder.
+3. **Setup**: Ensure that all files, including the Python script, the `exiftool.exe` are placed in the same folder.
 
-3. **Run the Program**: To Start the program use `RunApp.bat`.
+4. **Run the Program**: To Start the program use `RunApp.bat`.
 
-4. **Options**:
-   - Select a button for reading data or removing data
+5. **Options**:
+   - Select a button for reading data or removing data or get trolled
 
-5. **Output**: Depending on your choice, the program will either remove metadata from the specified file(s) or display the metadata information.
+6. **Output**: Depending on your choice, the program will either remove metadata from the specified file(s) or display the metadata information.
 
 ## Additional Information
 
